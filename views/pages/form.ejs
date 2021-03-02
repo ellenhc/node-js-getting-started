@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <form action="/math" method="GET">
+        <label for="operator">Choose an operator:</label>
+        <select id="operator" name="operator">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+        </select>
+
+        <label for="operand1">First Operand:</label>
+        <input type="number" id="operand1" name="operand1">
+
+        <label for="operand2">Second Operand</label>
+        <input type="number" id="operand2" name="operand2">
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
