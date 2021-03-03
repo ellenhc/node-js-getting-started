@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        function math_service() {
+            const form_data = $("#math_form").serialize();
+            $.getJSON({
+                'url': '/math_service',
+                'data': form_data,
+                'success': function(data) {
+                    let answer = data['answer'];
+                    //alert(answer);
+                    document.getElementById("result").innerHTML = answer;
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <form id="math_form" action="/math" method="GET">
+        <input type="number" id="operand1" name="operand1">
+
+        <select id="operator" name="operator">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+
+        <input type="number" id="operand2" name="operand2">
+
+        <input type="submit" value="=">
+    </form>
+    <button onClick="math_service()">JSON</button>
+    <div id="result"></div>
+</body>
+
+</html>
