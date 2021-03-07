@@ -57,8 +57,10 @@ function handlePostage(request, response) {
 
 function calculateRate(mailType, weight) {
     let postage;
+    let typeOfMail = "";
     switch (mailType) {
         case 1:
+            typeOfMail = "Letters (Stamped)";
             if (weight <= 1) {
                 postage = 0.55;
             } else if (weight > 1 && weight <= 2) {
@@ -70,6 +72,7 @@ function calculateRate(mailType, weight) {
             }
             break;
         case 2:
+            typeOfMail = "Letters (Metered)";
             if (weight <= 1) {
                 postage = 0.51;
             } else if (weight > 1 && weight <= 2) {
@@ -81,6 +84,7 @@ function calculateRate(mailType, weight) {
             }
             break;
         case 3:
+            typeOfMail = "Large Envelopes (Flats)";
             if (weight <= 1) {
                 postage = 1.00;
             } else if (weight > 1 && weight <= 2) {
@@ -110,6 +114,7 @@ function calculateRate(mailType, weight) {
             }
             break;
         case 4:
+            typeOfMail = "First-Class Package Service—Retail";
             if (weight <= 4) {
                 postage = 4.00;
             } else if (weight > 4 && weight <= 8) {
@@ -124,6 +129,6 @@ function calculateRate(mailType, weight) {
             postage = 0;
             break;
     }
-    const params = { mailType: mailType, weight: weight, postage: postage };
+    const params = { mailType: typeOfMail, weight: weight, postage: postage };
     return params;
 }
