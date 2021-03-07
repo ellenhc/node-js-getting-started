@@ -69,6 +69,8 @@ function calculateRate(mailType, weight) {
                 postage = 0.95;
             } else if (weight > 3 && weight <= 3.5) {
                 postage = 1.15;
+            } else {
+                postage = 1.35;
             }
             break;
         case 2:
@@ -81,6 +83,8 @@ function calculateRate(mailType, weight) {
                 postage = 0.91;
             } else if (weight > 3 && weight <= 3.5) {
                 postage = 1.11;
+            } else {
+                postage = 1.31;
             }
             break;
         case 3:
