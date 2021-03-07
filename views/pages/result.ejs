@@ -9,9 +9,10 @@
     <div id="result">
         The postage rate for a
         <%= mailType %> that weighs
-            <%= weight %> ounces is $
-                <%= postage %>
+            <%= weight %> ounces is <span id="price">$
+                <%= postage %></span>
     </div>
+    <a href="/getRate.html">Get new rate</a>
 </body>
 
 </html>
